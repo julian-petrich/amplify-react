@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Table, Alert } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./App.css";
-import NavBar from './routes/NavBar';
+//import NavBar from './routes/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -80,7 +80,6 @@ class App extends Component {
 
     return (
       <div className="center">
-      <NavBar />
         {loading ? (
           <p>Loading...</p>
         ) : error ? (
