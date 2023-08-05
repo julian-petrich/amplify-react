@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Table, Alert } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import "./App.css";
 //import NavBar from './routes/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -58,7 +58,7 @@ class App extends Component {
               {filteredData.map((item, index) => (
                 <tr key={index}>
                    <td>
-                   <Link to={`/player/${item.id}`}>{item.name}</Link>
+                   {item.name}
                     </td>
                   <td>{item.games}</td>
                   <td>{item.goals}</td>
