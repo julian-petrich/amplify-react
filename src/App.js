@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className='center'>
+      <h1>Mosman FC</h1>
       <div className="image-container">
           <img src="/mosman_team.jpeg" alt="Mosman Team" />
       </div>
@@ -20,7 +21,8 @@ function App() {
                 <th>Games</th>
                 <th>Goals</th>
                 {/* Add more headers for other properties if needed */}
-            </tr>             </thead>
+            </tr>
+          </thead>
           <tbody>
               <tr>
                 <td>Batman</td>
@@ -40,7 +42,8 @@ function App() {
                 <th>Games</th>
                 <th>Goals</th>
                 {/* Add more headers for other properties if needed */}
-            </tr>             </thead>
+            </tr>
+          </thead>
           <tbody>
               <tr>
                 <td>Superman</td>

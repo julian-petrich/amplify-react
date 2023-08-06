@@ -11,8 +11,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Optional: If you want to center the table vertically as well */
-  margin-left:25%;
-  margin-right:25%;
   background-color: rgba(173, 216, 230, 0.7);;
 }
 
