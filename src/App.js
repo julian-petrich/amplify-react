@@ -10,7 +10,6 @@ class App extends Component {
     return(
     <div className='center'>
       <NavBar/>
-      <h1>Mosman FC</h1>
       <div className="image-container">
           <img src="/mosman_team.jpeg" alt="Mosman Team" />
       </div>
