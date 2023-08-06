@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'; // Create a separate CSS file for the navbar if needed
 
-class NavBar extends Component {
-    render() {
-        return(
-            <nav className="navbar">
-                <div className="navbar-container">
-                    <Link to="https://google.com">Home</Link>
-                </div>
-            </nav>
-        )
-    };
-}
+const NavBar = () => {
+  return (
+    <nav className="navbar">
+      <ul className="navbar-container">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/">News</Link></li>
+        <li><Link to="/">Results</Link></li>
+        <li><Link to="/">Ladder</Link></li>
+        {/* Add other links for navigation */}
+      </ul>
+    </nav>
+  );
+};
 
 export default NavBar;
