@@ -34,7 +34,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /*background-image: url('/mosman_logo.png'); /* Replace with the correct path to your image */
+  background-image: url('../public/mosman_logo.png'); /* Replace with the correct path to your image */
   background-size:contain;
   background-repeat: no-repeat;
   background-position: center;
