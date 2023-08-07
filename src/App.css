@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Optional: If you want to center the table vertically as well */
-  background-color: rgba(173, 216, 230, 0.7);;
+  background-color: rgba(173, 216, 230, 0.7);
 }
 
 /* Container to hold the tables */
@@ -54,10 +54,11 @@ body {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; /* Set the table layout to fixed */
+  background-color: #f2f2f2 ;
 }
 
 .table-container tbody tr:hover {
-  background-color: #f2f2f2 !important;
+  background-color: lightgrey !important;
 }
 
 .table-container table tbody td {
