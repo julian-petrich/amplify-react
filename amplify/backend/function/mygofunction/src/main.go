@@ -29,6 +29,7 @@ var players = []player{
 
 type response struct {
 	Players []player `json:"players"`
+	Player  player   `json:"player"`
 }
 
 func findPlayerByID(id string) (player, error) {
