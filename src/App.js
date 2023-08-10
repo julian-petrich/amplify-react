@@ -2,7 +2,7 @@ import React from 'react';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './routes/NavBar';
-import PlayerList from './PlayerList';
+import PlayerList from './routes/PlayerList';
 
 
 function App () {

@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import App from './App';
-
+import SinglePlayer from "./routes/SinglePlayer";
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports'
 
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+  {
+    path: "player/:id",
+    element: <SinglePlayer />,
+},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
