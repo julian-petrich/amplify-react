@@ -41,5 +41,4 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
-amplify/backend/function/mygofunction/bin/main
 #amplify-do-not-edit-end
