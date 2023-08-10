@@ -21,11 +21,11 @@ type player struct {
 
 var players = []player{
 	{ID: "1", Name: "Superman", Position: "Midfielder", Games: 144, Goals: 2, CleanSheets: 1, Image: "/julian.png"},
-	{ID: "2", Name: "Batman", Position: "Goalkeeper", Games: 123, Goals: 5, CleanSheets: 3},
-	{ID: "3", Name: "Ironman", Position: "Midfielder", Games: 3, Goals: 6, CleanSheets: 123},
-	{ID: "4", Name: "Catwoman", Position: "Forward", Games: 1, Goals: 0, CleanSheets: 444},
-	{ID: "5", Name: "Hulk", Position: "Defender", Games: 45, Goals: 6, CleanSheets: 0},
-	{ID: "6", Name: "Peter Pan", Position: "Midfielder", Games: 555555, Goals: 6, CleanSheets: 567899},
+	{ID: "2", Name: "Batman", Position: "Goalkeeper", Games: 123, Goals: 5, CleanSheets: 3, Image: "/julian.png"},
+	{ID: "3", Name: "Ironman", Position: "Midfielder", Games: 3, Goals: 6, CleanSheets: 123, Image: "/julian.png"},
+	{ID: "4", Name: "Catwoman", Position: "Forward", Games: 1, Goals: 0, CleanSheets: 444, Image: "/julian.png"},
+	{ID: "5", Name: "Hulk", Position: "Defender", Games: 45, Goals: 6, CleanSheets: 0, Image: "/julian.png"},
+	{ID: "6", Name: "Peter Pan", Position: "Midfielder", Games: 555555, Goals: 6, CleanSheets: 567899, Image: "/julian.png"},
 }
 
 type response struct {

@@ -5,14 +5,14 @@ import Image from 'react-bootstrap/Image';
 function CarouselImages() {
   return (
     <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item>
         <Image src="/mosman_harbord.jpeg" text="First slide" />
         <Carousel.Caption>
           <h3>3-1 Win against Harbord </h3>
           <p>Goals: Thjis, </p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item>
         <Image src="/mosman_manly.jpeg" text="Second slide" />
         <Carousel.Caption>
           <h3>3-1 Win against Manly Vale A</h3>
