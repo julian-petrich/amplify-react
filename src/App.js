@@ -3,6 +3,8 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './routes/NavBar';
 import PlayerList from './routes/PlayerList';
+import CarouselImages from './routes/Carousel';
+
 
 
 function App () {
@@ -11,7 +13,7 @@ function App () {
       <NavBar/>
       <h1>Mosman FC</h1>
       <div className="image-container">
-          <img src="/mosman_team.jpeg" alt="Mosman Team" />
+      <CarouselImages/>
       </div>
       <PlayerList/>
    </div>

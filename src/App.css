@@ -1,14 +1,6 @@
-/* App.css or your custom CSS file */
-body {
-  background-color: white !important; /* Set the background color for the body */
-  margin: 0; /* Remove default body margin */
-  padding: 0; /* Remove default body padding */
-}
-
 .center {
   display: flex;
   flex-direction: column; /* Align children vertically */
-  justify-content: center;
   align-items: center;
   min-height: 100vh; /* Optional: If you want to center the table vertically as well */
   background-color: rgba(173, 216, 230, 0.7);

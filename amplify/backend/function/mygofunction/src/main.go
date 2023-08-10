@@ -16,10 +16,11 @@ type player struct {
 	Games       int    `json:"games"`
 	Goals       int    `json:"goals"`
 	CleanSheets int    `json:"cleansheets"`
+	Image       string `json:"image"`
 }
 
 var players = []player{
-	{ID: "1", Name: "Superman", Position: "Midfielder", Games: 144, Goals: 2, CleanSheets: 1},
+	{ID: "1", Name: "Superman", Position: "Midfielder", Games: 144, Goals: 2, CleanSheets: 1, Image: "/julian.png"},
 	{ID: "2", Name: "Batman", Position: "Goalkeeper", Games: 123, Goals: 5, CleanSheets: 3},
 	{ID: "3", Name: "Ironman", Position: "Midfielder", Games: 3, Goals: 6, CleanSheets: 123},
 	{ID: "4", Name: "Catwoman", Position: "Forward", Games: 1, Goals: 0, CleanSheets: 444},

@@ -15,7 +15,7 @@
       "function": {
         "mygofunction": {
           "deploymentBucketName": "amplify-amplifyreact-dev-195018-deployment",
-          "s3Key": "amplify-builds/mygofunction-4f7a656232495370376b-build.zip"
+          "s3Key": "amplify-builds/mygofunction-614c6869474c474f7256-build.zip"
         }
       },
       "api": {

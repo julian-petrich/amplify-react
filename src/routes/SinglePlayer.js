@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 import { API } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
+import "../App.css";
+
 
 function PlayerDetails() {
   const { id } = useParams();
@@ -31,19 +33,18 @@ function PlayerDetails() {
     <div className="center">
       <NavBar />
       {player && (
-        <div>
-            <Card border="secondary">
+            <Card border="secondary" style={{ width: '18rem' }}>
                 <Card.Body>
                   <Card.Title className="text-center">{player.name}</Card.Title>
+                  <Image src={player.image} alt="No Image" fluid rounded />
                   <Card.Text>
                     <Col className='text-center'>
-                      <Image src="/mosman_logo.png" roundedCircle />
                     </Col>
                     <Row>
-                    <Col>Position: {player.position}</Col>
-                    <Col>Games: {player.games}</Col>
-                    <Col>Games: {player.games}</Col>
+                    <Col><a> Position:</a> {player.position}</Col>
+                    <Col><a> Games:</a> {player.games}</Col>
                   </Row>
+                  <br></br>
                   <Row>
                     <Col>Goals: {player.goals}</Col>
                     <Col>Clean Sheets: {player.cleansheets}</Col>
@@ -51,7 +52,6 @@ function PlayerDetails() {
                   </Card.Text>
                 </Card.Body>
             </Card>
-        </div>
       )}
     </div>
   );
