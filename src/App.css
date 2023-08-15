@@ -1,9 +1,13 @@
+body{
+  background-color:rgba(173, 216, 230, 0.7) !important;
+}
+
 .center {
   display: flex;
   flex-direction: column; /* Align children vertically */
   align-items: center;
   min-height: 100vh; /* Optional: If you want to center the table vertically as well */
-  background-color: rgba(173, 216, 230, 0.7);
+  margin-bottom: 20px;
 }
 
 /* Container to hold the tables */
@@ -42,6 +46,7 @@
 
 
 /* Table styles */
+
 .table-container table {
   width: 100%;
   border-collapse: collapse;
@@ -64,7 +69,6 @@
   font-weight: bold !important; /* Optionally, set the font weight for the table header text */
 }
 
-
 .image-container {
   display: flex;
   justify-content: center;
@@ -80,6 +84,19 @@
   border-radius: 10px; /* Adjust the value to control the amount of rounding */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Set the box shadow color and spread */
 }
+
+#logo {
+  max-width: 30px;
+  margin: 0px;
+}
+
+#player-image {
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  margin: 0px;
+}
+
 
 /* Container to hold the tables and image */
 .container {

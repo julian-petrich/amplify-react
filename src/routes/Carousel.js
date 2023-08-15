@@ -22,7 +22,7 @@ function CarouselImages() {
       <Carousel.Item>
         <Image src="/mosman_mosman_c.jpeg" text="Third slide" />
         <Carousel.Caption>
-          <h3>5-0 Win against Manly Vale A</h3>
+          <h3>5-0 Win against Mosman C</h3>
           <p>Goals: Plenty</p>
         </Carousel.Caption>
       </Carousel.Item>

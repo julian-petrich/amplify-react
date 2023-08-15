@@ -8,6 +8,7 @@ import Image from 'react-bootstrap/Image';
 import { API } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
 import "../App.css";
+import { Container } from 'react-bootstrap';
 
 
 function PlayerDetails() {
@@ -30,13 +31,15 @@ function PlayerDetails() {
   }
 
   return (
+    
     <div className="center">
       <NavBar />
+      <Container>
       {player && (
-            <Card border="secondary" style={{ width: '18rem' }}>
+            <Card border="secondary" style={{ width: '80%' }}>
                 <Card.Body>
                   <Card.Title className="text-center">{player.name}</Card.Title>
-                  <Image src={player.image} alt="No Image" fluid rounded />
+                  <Image src={player.image} alt="No Image" fluid rounded id="player-image" variant="center" />
                   <Card.Text>
                     <Col className='text-center'>
                     </Col>
@@ -53,7 +56,9 @@ function PlayerDetails() {
                 </Card.Body>
             </Card>
       )}
+       </Container>
     </div>
+ 
   );
 }
 

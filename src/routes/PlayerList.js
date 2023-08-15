@@ -23,7 +23,7 @@ function renderTable(position) {
     const filteredData = players.filter((player) => player.position === position);
 
     return (
-      <div key={position} className={`table-container table-container-${position.toLowerCase()}`}>
+      <div key={position} className={`table-container`}>
         <h2>{position}</h2>
         {filteredData.length > 0 ? (
           <table>

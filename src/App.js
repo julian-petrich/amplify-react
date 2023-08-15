@@ -6,7 +6,6 @@ import PlayerList from './routes/PlayerList';
 import CarouselImages from './routes/Carousel';
 
 
-
 function App () {
     return(
     <div className='center'>

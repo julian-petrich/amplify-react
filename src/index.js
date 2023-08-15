@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import App from './App';
 import SinglePlayer from "./routes/SinglePlayer";
+import Ladder from "./routes/Ladder"
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports'
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "player/:id",
     element: <SinglePlayer />,
+},
+{
+  path: "ladder",
+  element: <Ladder />,
 },
 ]);
 
