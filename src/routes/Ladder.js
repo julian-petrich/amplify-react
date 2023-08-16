@@ -122,6 +122,16 @@ function Ladder() {
                     <td>-33</td>
                     <td>9</td>
                 </tr>
+                <tr>
+                    <td>11.</td>
+                    <td></td>
+                    <td>Naarabeen</td>
+                    <td>18</td>
+                    <td>2-3-13</td>
+                    <td>27:60</td>
+                    <td>-33</td>
+                    <td>9</td>
+                </tr>
             </tbody>
             </table>
         </div>
