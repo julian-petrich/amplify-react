@@ -23,38 +23,30 @@ function renderTable(position) {
     const filteredData = players.filter((player) => player.position === position);
 
     return (
-      <div key={position} className={`table-container`}>
+      <div key={position} className={`container`}>
         <h2>{position}</h2>
-        {filteredData.length > 0 ? (
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Games</th>
-                <th>Goals</th>
-                <th>Clean Sheets</th>
-                {/* Add more headers for other properties if needed */}
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.map((item, index) => (
-                
-                <tr key={index}>
-                  
-                  <td><a href={`/player/${item.id}`}>{item.name}</a></td>
-                  <td>{item.games}</td>
-                  <td>{item.goals}</td>
-                  <td>{item.cleansheets}</td>
-                  {/* Add more cells for other properties if needed */}
-                
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <p>No data found for {position}.</p>
-        )}
-      </div>
+        <div className="row">
+          {filteredData.map((item, index) => (
+            <div key={index} className="col-md-4 mb-3">
+            <div className="card">
+            <div className="card-header">
+                <div className="header-left">{item.name}</div>
+                <div className="header-right"># {item.id}</div>
+              </div>
+              <img src={item.image} className="card-img-top" alt={item.name} />
+              <div className="card-body">
+                <div className="attribute-group">
+                    <p className="attribute">Games: {item.games}</p>
+                    <p className="attribute">Goals: {item.goals}</p>
+                    <p className="attribute">Assists: {item.goals}</p>
+                    <p className="attribute">Clean Sheets: {item.cleansheets}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ))}
+          </div>
+          </div>
     );
   }
 

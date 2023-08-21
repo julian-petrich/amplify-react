@@ -10,6 +10,54 @@ body{
   margin-bottom: 20px;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-left {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.header-right {
+  text-align: right;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Add hover effect for better interactivity */
+.card-header:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.attribute-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.attribute {
+  width: calc(50% - 5px); /* Two columns with spacing */
+  margin-bottom: 10px;
+}
+
 /* Container to hold the tables */
 .table-container-wrapper {
   position: relative;
@@ -28,7 +76,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../public/mosman_logo.png'); /* Replace with the correct path to your image */
+  /*background-image: url('../public/mosman_logo.png');  Replace with the correct path to your image */
   background-size:contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -50,7 +98,6 @@ body{
 .table-container table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* Set the table layout to fixed */
   background-color: #f2f2f2 ;
 }
 
@@ -60,7 +107,6 @@ body{
 
 .table-container table tbody td {
   padding: 8px;
-  border: 1px solid #ccc;
 }
 
 .table-container th {
