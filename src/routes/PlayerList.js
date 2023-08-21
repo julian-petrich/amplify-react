@@ -30,8 +30,8 @@ function renderTable(position) {
             <div key={index} className="col-md-4 mb-3">
             <div className="card">
             <div className="card-header">
-                <div className="header-left">{item.name}</div>
-                <div className="header-right"># {item.id}</div>
+                    <div className="header-left">{item.name}</div>
+                    <div className="header-right"># {item.number}</div>
               </div>
               <img src={item.image} className="card-img-top" alt={item.name} />
               <div className="card-body">

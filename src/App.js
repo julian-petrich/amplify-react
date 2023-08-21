@@ -8,7 +8,7 @@ import CarouselImages from './routes/Carousel';
 
 function App () {
     return(
-    <div className='center'>
+    <div className="center">
       <NavBar/>
       <h1>Mosman FC</h1>
       <div className="image-container">

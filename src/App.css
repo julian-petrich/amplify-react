@@ -26,6 +26,13 @@ body{
   border-bottom: 1px solid #ccc;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .header-left {
   text-align: left;
   font-weight: bold;
