@@ -17,7 +17,7 @@ function PlayerDetails() {
 
   useEffect(() => {
     fetchPlayer();
-  }, []);
+  }, );
 
   async function fetchPlayer() {
     try {
@@ -44,8 +44,8 @@ function PlayerDetails() {
                     <Col className='text-center'>
                     </Col>
                     <Row>
-                    <Col><a> Position:</a> {player.position}</Col>
-                    <Col><a> Games:</a> {player.games}</Col>
+                    <Col><p> Position: {player.position}</p></Col>
+                    <Col><p> Games: {player.games}</p></Col>
                   </Row>
                   <br></br>
                   <Row>

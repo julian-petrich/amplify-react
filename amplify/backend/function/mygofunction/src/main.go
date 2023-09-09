@@ -12,20 +12,22 @@ import (
 type player struct {
 	ID          string `json:"id"`
 	Name        string `json:"name"`
+	Number      int    `json:"number"`
 	Position    string `json:"position"`
 	Games       int    `json:"games"`
 	Goals       int    `json:"goals"`
+	Assists     int    `json:"assists"`
 	CleanSheets int    `json:"cleansheets"`
 	Image       string `json:"image"`
 }
 
 var players = []player{
-	{ID: "1", Name: "Superman", Position: "Midfielder", Games: 144, Goals: 2, CleanSheets: 1, Image: "/julian.png"},
-	{ID: "2", Name: "Batman", Position: "Goalkeeper", Games: 123, Goals: 5, CleanSheets: 3, Image: "/julian.png"},
-	{ID: "3", Name: "Ironman", Position: "Midfielder", Games: 3, Goals: 6, CleanSheets: 123, Image: "/julian.png"},
-	{ID: "4", Name: "Catwoman", Position: "Forward", Games: 1, Goals: 0, CleanSheets: 444, Image: "/julian.png"},
-	{ID: "5", Name: "Hulk", Position: "Defender", Games: 45, Goals: 6, CleanSheets: 0, Image: "/julian.png"},
-	{ID: "6", Name: "Peter Pan", Position: "Midfielder", Games: 555555, Goals: 6, CleanSheets: 567899, Image: "/julian.png"},
+	{ID: "1", Name: "Superman", Number: 8, Position: "Midfielder", Games: 144, Goals: 2, Assists: 8, CleanSheets: 1, Image: "/mosman_logo.png"},
+	{ID: "2", Name: "Batman", Number: 1, Position: "Goalkeeper", Games: 123, Goals: 5, Assists: 8, CleanSheets: 3, Image: "/mosman_logo.png"},
+	{ID: "3", Name: "Ironman", Number: 7, Position: "Midfielder", Games: 3, Goals: 6, Assists: 0, CleanSheets: 123, Image: "/mosman_logo.png"},
+	{ID: "4", Name: "Catwoman", Number: 9, Position: "Forward", Games: 1, Goals: 0, Assists: 8, CleanSheets: 444, Image: "/mosman_logo.png"},
+	{ID: "5", Name: "Hulk", Number: 6, Position: "Defender", Games: 45, Goals: 6, Assists: 99, CleanSheets: 0, Image: "/julian.png"},
+	{ID: "6", Name: "Peter Pan", Number: 10, Position: "Midfielder", Games: 55, Goals: 6, Assists: 2, CleanSheets: 567899, Image: "/mosman_logo.png"},
 }
 
 type response struct {
