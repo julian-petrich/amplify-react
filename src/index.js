@@ -8,6 +8,7 @@ import "./index.css";
 import App from './App';
 import SinglePlayer from "./routes/SinglePlayer";
 import Ladder from "./routes/Ladder"
+import CreatePlayer from "./routes/CreatePlayer"
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports'
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   path: "ladder",
   element: <Ladder />,
 },
+{
+  path: "createPlayer",
+  element: <CreatePlayer />,
+},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -33,3 +38,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+

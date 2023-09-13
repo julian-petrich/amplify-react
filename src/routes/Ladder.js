@@ -19,9 +19,9 @@ function Ladder() {
             </thead>
             <tbody>
                 <tr>
-                    <td>Mosman A</td>
+                    <td style={{color: "#8CC152"}}>Mosman A</td>
                     <td>Manly Vale A</td>
-                    <td>TBD</td>
+                    <td>2-0</td>
                 </tr>
                 </tbody>
                 </table>
