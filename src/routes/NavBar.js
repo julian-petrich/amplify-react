@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './NavBar.css'; // Create a separate CSS file for the navbar if needed
 
-const NavBar = () => {
+function NavBar() {
   return (
     <Navbar expand="lg" bg="primary" data-bs-theme="dark" className="bg-body-tertiary navbar" sticky="top">
     <Container>
@@ -16,7 +16,6 @@ const NavBar = () => {
           <Nav.Link href="#news">News</Nav.Link>
           <Nav.Link href="#results">Results</Nav.Link>
           <Nav.Link href="/ladder">Ladder</Nav.Link>
-          <Nav.Link href="/createPlayer">Create Player</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
