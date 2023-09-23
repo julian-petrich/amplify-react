@@ -14,7 +14,7 @@ function NavBar() {
         <Nav className="me-auto navbar-container">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#news">News</Nav.Link>
-          <Nav.Link href="#results">Results</Nav.Link>
+          <Nav.Link href="/results">Results</Nav.Link>
           <Nav.Link href="/ladder">Ladder</Nav.Link>
         </Nav>
       </Navbar.Collapse>

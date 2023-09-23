@@ -1,15 +1,32 @@
+import React, { useState, useEffect } from 'react';
+import { API } from 'aws-amplify';
 import NavBar from './NavBar';
 import "../App.css";
 import Image from 'react-bootstrap/Image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Ladder() {
+    const [teams, setTeams] = useState([]);
+
+    useEffect(() => {
+        fetchTeams();
+    },[] );
+
+        async function fetchTeams(){
+            try {
+                const data = await API.get('myapi', '/teams')
+                setTeams(data.teams)
+            } catch (error){
+                console.error('Error fetching teams:', error)
+            }
+        }
+
     return(
     <div className="center">
         <NavBar />
         <h1>AL03 - Finals</h1>
         <div className="table-container">
-            <table class="table table-hover">
+            <table className="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Home</th>
@@ -28,7 +45,7 @@ function Ladder() {
         </div>
         <h1>AL03 - Semi Finals</h1>
         <div className="table-container">
-            <table class="table table-hover">
+            <table className="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Home</th>
@@ -52,7 +69,7 @@ function Ladder() {
         </div>
         <h1>AL03 - Ladder</h1>
         <div className="table-container">
-            <table class="table table-hover">
+            <table className="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Rank</th>
@@ -66,26 +83,17 @@ function Ladder() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td></td>
-                    <td>Seaforth</td>
-                    <td>18</td>
-                    <td>13-2-3</td>
-                    <td>53:22</td>
-                    <td>31</td>
-                    <td>41</td>
+            {teams.map((team, index) => (
+                <tr key={index}>
+                    <td>{index+1}.</td>
+                    <td><Image src="/mosman_logo.png" alt="No Image" className='image-container' id='logo'/></td>                <td>{team.name}</td>
+                    <td>{team.games}</td>
+                    <td>{team.wins}-{team.draws}-{team.losses}</td>
+                    <td>{team.goals}:{team.goalsagainst}</td>
+                    <td>{team.goaldiff}</td>
+                    <td>{team.points}</td>
                 </tr>
-                <tr>
-                    <td>2.</td>
-                    <td><Image src="/mosman_logo.png" alt="No Image" className='image-container' id='logo'/></td>
-                    <td>Mosman A</td>
-                    <td>18</td>
-                    <td>12-3-3</td>
-                    <td>43:24</td>
-                    <td>19</td>
-                    <td>39</td>
-                </tr>
+            ))}
                 <tr>
                     <td>3.</td>
                     <td></td>
