@@ -30,9 +30,12 @@ function Results() {
     });
 
     return (
-        <div className="center">
-          <NavBar />
-          {Object.keys(groupedData).map((dateKey, index) => (
+      <div className="center">
+        <NavBar />
+        {Object.keys(results).length === 0 ? (
+          <p>Loading...</p>
+        ) : (
+          Object.keys(groupedData).map((dateKey, index) => (
             <div className="table-container" key={index}>
               <h1>{dateKey}</h1>
               <table className="table table-hover">
@@ -49,18 +52,22 @@ function Results() {
                       <td>{result["home team"]["name"]}</td>
                       <td>{result["away team"]["name"]}</td>
                       <td>
-                        {result["home team"]["Goals"]["N"]}-{result["away team"]["Goals"]["N"]}
+                        <a href={`/results/${result["id"]}`} style={{ textDecoration: 'none'}}>
+                          {result["home team"]["Goals"]["N"]}-{result["away team"]["Goals"]["N"]}
+                        </a>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          ))}
-        </div>
-      );
-      
-  }
+          ))
+        )}
+      </div>
+    );
+}    
+
+  
   
 
 export default Results;

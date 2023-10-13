@@ -10,32 +10,19 @@ import SinglePlayer from "./routes/SinglePlayer";
 import Ladder from "./routes/Ladder"
 import Results from "./routes/Results"
 import CreatePlayer from "./routes/CreatePlayer"
+import SingleResult from "./routes/SingleResult"
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports'
 
 Amplify.configure(config);
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "player/:id",
-    element: <SinglePlayer />,
-},
-{
-  path: "ladder",
-  element: <Ladder />,
-},
-{
-  path: "results",
-  element: <Results />,
-},
-{
-  path: "createPlayer",
-  element: <CreatePlayer />,
-},
+{ path: "/", element: <App />, },
+{ path: "player/:id", element: <SinglePlayer />, },
+{ path: "ladder", element: <Ladder />, },
+{ path: '/results/:id', element: <SingleResult /> },
+{ path: "results", element: <Results />, },
+{ path: "createPlayer", element: <CreatePlayer />, },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
