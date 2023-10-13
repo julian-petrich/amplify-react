@@ -13,7 +13,7 @@ function Results() {
         try {
             const data = await API.get('myapi', '/results')
             setResults(data.results)
-            console.log(results)
+            console.log("Data", data.results)
         } catch (error){
             console.error('Error fetching results:', error)
         }
