@@ -32,12 +32,14 @@ function Results() {
     return (
       <div className="center">
         <NavBar />
+        <div className='container'>
         {Object.keys(results).length === 0 ? (
           <p>Loading...</p>
         ) : (
           Object.keys(groupedData).map((dateKey, index) => (
-            <div className="table-container" key={index}>
-              <h1>{dateKey}</h1>
+            <div key={index}>
+            <h1>{dateKey}</h1>
+            <div className="table-responsive" >
               <table className="table table-hover">
                 <thead>
                   <tr>
@@ -61,9 +63,12 @@ function Results() {
                 </tbody>
               </table>
             </div>
+            </div>
           ))
+        
         )}
-      </div>
+        </div>
+        </div>
     );
 }    
 

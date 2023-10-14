@@ -21,7 +21,7 @@ function LoadLadder() {
         }
     
         return(
-        <div className="table-container LoadLadder">
+        <div className="table-responsive">
             <table className="table table-hover">
             <thead>
                 <tr>
@@ -49,7 +49,7 @@ function LoadLadder() {
             ))}
             </tbody>
             </table>
-        </div>
+            </div>
     )
 }
 

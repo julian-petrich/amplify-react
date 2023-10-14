@@ -34,7 +34,7 @@ function SingleResult() {
           <div>Loading...</div>
         ) : (
           result && (
-            <div className='container centered-content'>
+            <div className='container'>
             <div className='result'>
               <h1>
               <a href="#">{result["Home Team"].name}</a> {result["Home Team"].Goals} : {result["Away Team"].Goals} <a href="#"> {result["Away Team"].name}</a>

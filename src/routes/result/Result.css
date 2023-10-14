@@ -25,13 +25,6 @@
     margin-top: 20px; /* Add spacing between the buttons and content */
   }
   
-.centered-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Make sure it takes up the full height of its container */
-}
-  
   .divider {
     color: #000; /* Color of the divider line */
     background-color: #000; /* Color of the divider line if it has a background */

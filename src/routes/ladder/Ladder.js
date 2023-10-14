@@ -9,7 +9,8 @@ function Ladder() {
     return(
     <div className="center">
         <NavBar />
-        <h1>AL03 - Finals</h1>
+        <div className='container'>
+        {/* <h1>AL03 - Finals</h1>
         <div className="table-container">
             <table className="table table-hover">
             <thead>
@@ -51,9 +52,10 @@ function Ladder() {
                 </tr>
                 </tbody>
                 </table>
-        </div>
+        </div> */}
         <h1>AL03 - Ladder</h1>
         <LoadLadder/>
+        </div>
         </div>
     )
 }
