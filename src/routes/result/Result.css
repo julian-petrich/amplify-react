@@ -30,13 +30,12 @@
     justify-content: center;
     align-items: center;
     height: 100%; /* Make sure it takes up the full height of its container */
-  }
+}
   
   .divider {
     color: #000; /* Color of the divider line */
     background-color: #000; /* Color of the divider line if it has a background */
     height: 2px; /* Height of the divider line */
-    width: 50%; /* Width of the divider line, adjust as needed */
     margin: 20px auto; /* Margin to center the divider horizontally and create spacing */
     border: none; /* Remove any default border */
   }
@@ -46,8 +45,4 @@
     justify-content: center;
     align-items: center;
     height: 100%; /* Ensure the column takes the full height of its parent */
-  }
-  
-  .right-column {
-    margin-left: -10px; /* Adjust the negative margin to control spacing */
   }

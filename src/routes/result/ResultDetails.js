@@ -59,7 +59,7 @@ function ResultDetails({ result }) {
             <div>Loading...</div>
           ) : (
             resultEvents && (
-              <div className="w-50 mx-auto">
+              <div>
               <Row>
                 <Col sm={12} md={6} className="centered-column">{resultEvents["Goals"]["Goal_1"]["Minute"]}'</Col>
                 <Col md={6} className="right-column">Goal for Mosman</Col>
@@ -80,8 +80,13 @@ function ResultDetails({ result }) {
           </div>
         )}
         {selectedTab === 'Ladder' && (
-          <div className="centered-content">
-            <LoadLadder/>
+          <div>
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <LoadLadder/>
+            )
+          }
           </div>
         )}
       </div>
