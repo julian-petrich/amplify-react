@@ -10,6 +10,10 @@ body{
   margin-bottom: 20px;
 }
 
+h5{
+  color: lightslategray !important;
+}
+
 /* Container to hold the tables and image */
 .container {
   position: relative;
@@ -72,6 +76,15 @@ body{
   margin-bottom: 10px;
 }
 
+.table-container{
+  position: relative;
+  justify-content: center;
+}
+
+.table-player th:nth-child(2) {
+  width: 40%; /* Set the desired width for the "Player Name" column */
+}
+
 .table-responsive {
   overflow:hidden; /* Increase or decrease the value as per your requirement */
   max-width: 100%; /* Set the width to 100% to ensure the table takes the full container width */
@@ -85,13 +98,18 @@ body{
 }
 
 .table-responsive table tbody td {
+  background-color: transparent;
   padding: 8px;
 }
 
+.table-responsive table tbody td a{
+  color:black;
+}
+
 .table-responsive th {
-  background-color: grey !important; /* Set your desired background color */
-  color: white !important; /* Set the text color to contrast with the background */
-  font-weight: bold !important; /* Optionally, set the font weight for the table header text */
+  background-color: transparent !important; /* Set your desired background color */
+  color: black !important; /* Set the text color to contrast with the background */
+  border-bottom: 2px solid red; /* Optionally, set the font weight for the table header text */
 }
 
 .image-container {

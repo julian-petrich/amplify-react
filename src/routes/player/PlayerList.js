@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import "../../App.css";
+import NavBar from '../navbar/NavBar'; 
 
 function PlayerList() {
   const [players, setPlayers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchPlayers();
@@ -13,6 +15,7 @@ function PlayerList() {
         try {
             const data = await API.get('myapi', '/players')
             setPlayers(data.players)
+            setIsLoading(false);
         } catch (error){
             console.error('Error fetching players:', error)
         }
@@ -22,41 +25,57 @@ function PlayerList() {
     function renderTable(position) {
       const filteredData = players.filter((player) => player.position === position);
       
-      return (
-        <div key={position} className={`container`}>
-          <h2>{position}</h2>
-          <div className="row">
+      return (  
+        <div key={position}>
+          <h5>{position}</h5>
+          <div className="table-responsive table-player">
+          <table className="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Games</th>
+                    <th scope="col">Goals</th>
+                    <th scope="col">Assists</th>
+                    <th scope="col">Clean Sheets</th>
+                </tr>
+            </thead>
+            <tbody>
             {filteredData.map((item, index) => (
-              <div key={index} className="col-md-4 mb-3">
-                <div className="card">
-                  <div className="card-header">
-                    <div className="header-left">{item.name}</div>
-                    <div className="header-right"># {item.number}</div>
-                  </div>
-                  <img src={item.image} className="card-img-top" alt={item.name} />
-                  <div className="card-body">
-                    <div className="attribute-group">
-                      <p className="attribute">Games: {item.games}</p>
-                      <p className="attribute">Goals: {item.goals}</p>
-                      <p className="attribute">Assists: {item.goals}</p>
-                      <p className="attribute">Clean Sheets: {item.goals}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <tr key={index}>
+                <td>{item.id}</td>
+                <td>{item.number}</td>
+                <td><a href={`/player/${item["id"]}`} style={{ textDecoration: 'none'}}></a></td>
+                <td>{item.games}</td>
+                <td>{item.goals}</td>
+                <td>{item.assists}</td>
+                <td>{item.cleansheets}</td>
+              </tr>
             ))}
+            </tbody>
+            </table>
+            </div>
           </div>
-        </div>
       );
     }
   
     return (
-      <div className="table-container-wrapper">
-              {renderTable('Goalkeeper')}
-              {renderTable('Defender')}
-              {renderTable('Midfielder')}
-              {renderTable('Forward')}
-      </div>
+      <div className='center'>
+      <NavBar/>
+      {isLoading ? (
+          // Display a loading message or spinner while data is loading
+          <div>Loading...</div>
+        ) : (
+          players && (
+       <div className='table-container'>
+                {renderTable('Goalkeeper')}
+                {renderTable('Defender')}
+                {renderTable('Midfielder')}
+                {renderTable('Forward')}
+        </div>
+          )
+        )}
+        </div>
     );
   }
 

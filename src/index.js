@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import App from './App';
 import SinglePlayer from "./routes/player/SinglePlayer";
+import PlayerList from "./routes/player/PlayerList";
 import Ladder from "./routes/ladder/Ladder"
 import Results from "./routes/result/Results"
 import SingleResult from "./routes/result/SingleResult"
@@ -18,11 +19,12 @@ Amplify.configure(config);
 
 const router = createBrowserRouter([
 { path: "/", element: <App />, },
-{ path: "player/:id", element: <SinglePlayer />, },
-{ path: "ladder", element: <Ladder />, },
+{ path: "/player/", element: <PlayerList />, },
+{ path: "/player/:id", element: <SinglePlayer />, },
+{ path: "/ladder", element: <Ladder />, },
 { path: '/results/:id', element: <SingleResult /> },
-{ path: "results", element: <Results />, },
-{ path: "createPlayer", element: <CreatePlayer />, },
+{ path: "/results", element: <Results />, },
+{ path: "/createPlayer", element: <CreatePlayer />, },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

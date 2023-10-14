@@ -13,7 +13,6 @@ function App () {
         <div className="image-container">
           <CarouselImages/>
         </div>
-      <PlayerList/>
    </div>
   );
 }

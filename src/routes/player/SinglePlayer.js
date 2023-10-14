@@ -1,62 +1,95 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from '../navbar/NavBar';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
 import { API } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
 import "../../App.css";
-import { Container } from 'react-bootstrap';
+import "./SinglePlayer.css"
 
 
 function PlayerDetails() {
   const { id } = useParams();
   const [player, setPlayer] = useState(null);
+  const [seasons, setSeasons] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  
 
   useEffect(() => {
     fetchPlayer();
-  }, );
+  },[] );
 
   async function fetchPlayer() {
     try {
       //TODO: Find a better solution here
-      const data = await API.get('myapi', `/greeting/${id}`);
-      console.log(data.players[id-1]);
-      setPlayer(data.players[id-1]); // Assuming the response directly contains the player data
+      const data = await API.get('myapi', `/players/${id}`);
+      setPlayer(data.player);// Assuming the response directly contains the player data
+
+      const seasons = Object.keys(data.player.Season);
+      setSeasons(seasons);
+
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching player:', error);
     }
   }
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!player || !seasons) {
+    return <div>Player data or seasons data not available.</div>;
+  }
+
   return (
-    
     <div className="center">
       <NavBar />
-      <Container>
-      {player && (
-            <Card border="secondary" style={{ width: '80%' }}>
-                <Card.Body>
-                  <Card.Title className="text-center">{player.name}</Card.Title>
-                  <Image src={player.image} alt="No Image" fluid rounded id="player-image" variant="center" />
-                  <Card.Text>
-                    <Col className='text-center'>
-                    </Col>
-                    <Row>
-                    <Col><p> Position: {player.position}</p></Col>
-                    <Col><p> Games: {player.games}</p></Col>
-                  </Row>
-                  <br></br>
-                  <Row>
-                    <Col>Goals: {player.goals}</Col>
-                    <Col>Clean Sheets: {player.cleansheets}</Col>
-                  </Row>
-                  </Card.Text>
-                </Card.Body>
-            </Card>
-      )}
-       </Container>
+            <div className='container'>
+              <h5>{player["General"]["Firstname"]} {player["General"]["Lastname"]} (#{player["General"]["Number"]})</h5>
+              <div className='container-player-general'>
+              <div className="column">
+                  <img src="/julian.png" alt="Image" />
+                </div>
+              <div className="column">
+                <p>Position: {player["General"]["Position"]}</p>
+                <p>Birthday: {player["General"]["Birthday"]}</p>
+                <p>Height: {player["General"]["Height"]} cm</p>
+                <p>Weight: {player["General"]["Weight"]} kg</p>
+                </div>
+              </div>
+              <div>
+                  <div className='table-container'>
+                  <table className='table-season'>
+                    <thead>
+                      <tr>    
+                        <th>Season</th>
+                        <th>Games</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                        <th>Yellow Cards</th>
+                        <th>Red Cards</th>
+                        <th>Man of the Match</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {seasons
+                        .sort((a, b) => parseInt(b, 10) - parseInt(a, 10))
+                        .map((seasonYear) => (
+                          <tr key={seasonYear}>
+                            <td>{seasonYear}</td>
+                            <td>{player.Season[seasonYear]["Games"]}</td>
+                            <td>{player.Season[seasonYear]["Goals"]}</td>
+                            <td>{player.Season[seasonYear]["Assists"]}</td>
+                            <td>{player.Season[seasonYear]["Yellow Cards"]}</td>
+                            <td>{player.Season[seasonYear]["Red Cards"]}</td>
+                            <td>{player.Season[seasonYear]["Man of the Match"]}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
     </div>
  
   );
