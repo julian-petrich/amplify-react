@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
-import "../App.css";
+import "../../App.css";
 
 function PlayerList() {
   const [players, setPlayers] = useState([]);

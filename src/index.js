@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import App from './App';
-import SinglePlayer from "./routes/SinglePlayer";
-import Ladder from "./routes/Ladder"
-import Results from "./routes/Results"
-import CreatePlayer from "./routes/CreatePlayer"
-import SingleResult from "./routes/SingleResult"
+import SinglePlayer from "./routes/player/SinglePlayer";
+import Ladder from "./routes/ladder/Ladder"
+import Results from "./routes/result/Results"
+import SingleResult from "./routes/result/SingleResult"
+import CreatePlayer from "./routes/player/CreatePlayer"
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports'
 

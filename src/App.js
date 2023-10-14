@@ -1,8 +1,8 @@
 import React from 'react';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './routes/NavBar';
-import PlayerList from './routes/PlayerList';
+import NavBar from './routes/navbar/NavBar';
+import PlayerList from './routes/player/PlayerList';
 import CarouselImages from './routes/Carousel';
 
 function App () {  

@@ -4,13 +4,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './NavBar.css'; // Create a separate CSS file for the navbar if needed
 
+//TODO: https://react-bootstrap.netlify.app/docs/components/offcanvas
+
 function NavBar() {
   return (
-    <Navbar expand="lg" bg="primary" data-bs-theme="dark" className="bg-body-tertiary navbar" sticky="top">
+    <Navbar collapseOnSelect expand="lg" bg="primary" data-bs-theme="dark" className="bg-body-tertiary navbar" sticky="top">
     <Container>
       <Navbar.Brand href="/">Mosman FC</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto navbar-container">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#news">News</Nav.Link>

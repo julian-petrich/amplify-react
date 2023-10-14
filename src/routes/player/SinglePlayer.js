@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './NavBar';
+import NavBar from '../navbar/NavBar';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 import { API } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
-import "../App.css";
+import "../../App.css";
 import { Container } from 'react-bootstrap';
 
 

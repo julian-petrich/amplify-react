@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
-import NavBar from './NavBar';
+import NavBar from '../navbar/NavBar';
 
 function Results() {
     const [results, setResults] = useState([]);

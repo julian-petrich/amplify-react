@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './NavBar';
+import NavBar from '../navbar/NavBar';
+import ResultDetails from './ResultDetails';
 import { API } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
-import "../App.css";
-import { Container } from 'react-bootstrap';
+import "../../App.css";
+import "./Result.css"
 
 function SingleResult() {
   const { id } = useParams();
@@ -28,26 +29,22 @@ function SingleResult() {
   return (
     <div className="center">
       <NavBar />
-      <Container>
         {isLoading ? (
           // Display a loading message or spinner while data is loading
           <div>Loading...</div>
         ) : (
           result && (
-            <div>
-              <div>Round: {result.Round}</div>
-              <div>ID: {result.ID}</div>
-              <div>Away Team: {result["Away Team"].name}</div>
-              <div>Away Team ID: {result["Away Team"].ID}</div>
-              <div>Away Team Goals: {result["Away Team"].Goals}</div>
-              <div>Home Team: {result["Home Team"].name}</div>
-              <div>Home Team ID: {result["Home Team"].ID}</div>
-              <div>Home Team Goals: {result["Home Team"].Goals}</div>
-              <div>Date: {result.Date.Year}/{result.Date.Month}/{result.Date.Day}</div>
+            <div className='container'>
+            <div className='result'>
+              <h1 className='resultsummary'>
+              <a href="#">{result["Home Team"].name}</a> {result["Home Team"].Goals} : {result["Away Team"].Goals} <a href="#"> {result["Away Team"].name}</a>
+              </h1>
+              <hr className="divider" />
+              <ResultDetails result={result}/>
+            </div>
             </div>
           )
         )}
-      </Container>
     </div>
   );
 }

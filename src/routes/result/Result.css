@@ -1,0 +1,53 @@
+.result {
+    text-align: center;
+  }
+
+  .tab-list {
+    display: flex;
+    gap: 10px; /* Add a gap between the buttons and the content */
+    justify-content: center;
+  }
+  
+  .tab-button {
+    background: transparent; /* Make the button background transparent */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .tab-button.active {
+    border-bottom: 2px solid blue; /* Add an underline style to the selected tab */
+  }
+  
+  .tab-content {
+    margin-top: 20px; /* Add spacing between the buttons and content */
+  }
+  
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make sure it takes up the full height of its container */
+  }
+  
+  .divider {
+    color: #000; /* Color of the divider line */
+    background-color: #000; /* Color of the divider line if it has a background */
+    height: 2px; /* Height of the divider line */
+    width: 50%; /* Width of the divider line, adjust as needed */
+    margin: 20px auto; /* Margin to center the divider horizontally and create spacing */
+    border: none; /* Remove any default border */
+  }
+
+  .centered-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the column takes the full height of its parent */
+  }
+  
+  .right-column {
+    margin-left: -10px; /* Adjust the negative margin to control spacing */
+  }
