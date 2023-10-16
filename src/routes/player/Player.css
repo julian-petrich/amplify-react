@@ -73,5 +73,14 @@
         width: auto; /* Make the table take the full width of its container */
     }
 
+    .image-text-container {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
     
+    .column img {
+      max-width: 100%; /* Allow both the image and text to take the full width on smaller screens */
+      max-height: 100%;
+    }
+
+
 }
