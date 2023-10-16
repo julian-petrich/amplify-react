@@ -22,10 +22,12 @@ function PlayerDetails() {
     try {
       //TODO: Find a better solution here
       const data = await API.get('myapi', `/players/${id}`);
+      
       setPlayer(data.player);// Assuming the response directly contains the player data
 
       const seasons = Object.keys(data.player.Season);
       setSeasons(seasons);
+
 
       setIsLoading(false);
     } catch (error) {
@@ -44,7 +46,7 @@ function PlayerDetails() {
               <h5>{player["General"]["Firstname"]} {player["General"]["Lastname"]} (#{player["General"]["Number"]})</h5>
               <div className='container-player-general'>
               <div className="column">
-                  <img src="/julian.png" alt="Image" />
+                  <img src="https://pxicme1bvd.execute-api.us-east-2.amazonaws.com/dev/players/3" alt="Image" />
                 </div>
               <div className="column">
                 <p>Position: {player["General"]["Position"]}</p>
