@@ -22,13 +22,9 @@ function PlayerList() {
         }
     }
 
-    if (isLoading) {
-      return <div>Loading...</div>;
-      }
-
   
     function renderTable(position) {
-      const filteredData = players.filter((player) => player.position === position);
+      const filteredData = players.filter((player) => player.general.Position.S === position);
       
       return (  
         <div>
@@ -48,12 +44,12 @@ function PlayerList() {
             <tbody>
             {filteredData.map((item, index) => (
               <tr key={index}>
-                <td>{item.number}</td>
-                <td><a href={`/player/${item["id"]}`} style={{ textDecoration: 'none'}}>klasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsd</a></td>
-                <td>{item.games}</td>
-                <td>{item.goals}</td>
-                <td>{item.assists}</td>
-                <td>{item.cleansheets}</td>
+                <td>{item.id}</td>
+                <td><a href={`/players/${item["id"]}`} style={{ textDecoration: 'none'}}>{`${item.general.Firstname.S} ${item.general.Lastname.S}`}</a></td>
+                <td>{item.season['2023'].M.Games.N}</td>
+                <td>{item.season['2023'].M.Goals.N}</td>
+                <td>{item.season['2023'].M.Assists.N}</td>
+                <td>{item.season['2023'].M["Clean Sheets"].N}</td>
               </tr>
             ))}
             </tbody>
@@ -67,7 +63,6 @@ function PlayerList() {
       <div className='center'>
       <NavBar/>
       {isLoading ? (
-          // Display a loading message or spinner while data is loading
           <div>Loading...</div>
         ) : (
           players && (

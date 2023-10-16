@@ -33,17 +33,13 @@ function PlayerDetails() {
     }
   }
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!player || !seasons) {
-    return <div>Player data or seasons data not available.</div>;
-  }
-
   return (
     <div className="center">
       <NavBar />
+      {isLoading ? (
+          <div>Loading...</div>
+        ) : ( 
+          player && ( 
             <div className='container'>
               <h5>{player["General"]["Firstname"]} {player["General"]["Lastname"]} (#{player["General"]["Number"]})</h5>
               <div className='container-player-general'>
@@ -67,7 +63,7 @@ function PlayerDetails() {
                         <th>Assists</th>
                         <th>Yellow Cards</th>
                         <th>Red Cards</th>
-                        <th>Man of the Match</th>
+                        <th>MOTM</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -88,6 +84,8 @@ function PlayerDetails() {
                   </table>
               </div>
               </div>
+        )
+        )}
     </div>
  
   );

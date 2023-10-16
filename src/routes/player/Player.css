@@ -1,5 +1,5 @@
 .table-player th:nth-child(1) {
-    width: 5%; /* Set the desired width for the "Player Name" column */
+    width: 5%;
   }
 
 .table-player th:nth-child(2) {
@@ -54,8 +54,8 @@
   }
   
   .column img {
-    max-width: 40%; /* Make the image responsive and fit the column width */
-    max-height: 40%; /* Make the image responsive and fit the column height */
+    max-width: 35%; /* Make the image responsive and fit the column width */
+    max-height: 30%; /* Make the image responsive and fit the column height */
     display: block; /* Remove any default image spacing */
     margin: 0 auto; /* Center the image horizontally within the column */
     float: right;
@@ -73,14 +73,8 @@
         width: auto; /* Make the table take the full width of its container */
     }
 
-    .image-text-container {
-      flex-direction: column; /* Stack elements vertically on smaller screens */
-    }
-    
     .column img {
       max-width: 100%; /* Allow both the image and text to take the full width on smaller screens */
       max-height: 100%;
     }
-
-
 }
