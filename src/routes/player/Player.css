@@ -1,0 +1,77 @@
+.table-player th:nth-child(1) {
+    width: 5%; /* Set the desired width for the "Player Name" column */
+  }
+
+.table-player th:nth-child(2) {
+    width: 40%; /* Set the desired width for the "Player Name" column */
+  }
+  
+  .table-player {
+    overflow:hidden; /* Increase or decrease the value as per your requirement */
+    max-width: 80%; /* Set the width to 100% to ensure the table takes the full container width */
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-single table th:nth-child(2),
+  .player-single table td:nth-child(2) {
+  width: auto; /* Set the width to "auto" to let it adjust based on content */
+  }
+  
+  .table-player tbody tr:hover {
+    background-color: lightgrey !important;
+  }
+  
+  .table-player table tbody td {
+    background-color: transparent;
+    padding: 8px;
+  }
+  
+  .table-player table tbody td a{
+    color:black;
+  }
+  
+  .table-player th {
+    background-color: transparent !important; /* Set your desired background color */
+    color: black !important; /* Set the text color to contrast with the background */
+    border-bottom: 2px solid red; /* Optionally, set the font weight for the table header text */
+  }
+
+  .container-player-general{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .column {
+    padding: 5px;
+    margin: 0px;
+    text-align: left;
+    flex: 2;
+    align-items: right;
+  }
+  
+  .column img {
+    max-width: 40%; /* Make the image responsive and fit the column width */
+    max-height: 40%; /* Make the image responsive and fit the column height */
+    display: block; /* Remove any default image spacing */
+    margin: 0 auto; /* Center the image horizontally within the column */
+    float: right;
+  }
+
+  /* Responsive table styles for smaller screens */
+@media (max-width: 768px) {
+    .table-player {
+        overflow-x: auto; /* Add horizontal scrolling for small screens */
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .table-player table {
+        width: auto; /* Make the table take the full width of its container */
+    }
+
+    
+}

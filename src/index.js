@@ -19,7 +19,7 @@ Amplify.configure(config);
 
 const router = createBrowserRouter([
 { path: "/", element: <App />, },
-{ path: "/player/", element: <PlayerList />, },
+{ path: "/players/", element: <PlayerList />, },
 { path: "/player/:id", element: <SinglePlayer />, },
 { path: "/ladder", element: <Ladder />, },
 { path: '/results/:id', element: <SingleResult /> },

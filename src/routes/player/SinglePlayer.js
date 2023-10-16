@@ -4,7 +4,7 @@ import NavBar from '../navbar/NavBar';
 import { API } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
 import "../../App.css";
-import "./SinglePlayer.css"
+import "./Player.css"
 
 
 function PlayerDetails() {
@@ -57,9 +57,8 @@ function PlayerDetails() {
                 <p>Weight: {player["General"]["Weight"]} kg</p>
                 </div>
               </div>
-              <div>
-                  <div className='table-container'>
-                  <table className='table-season'>
+                  <div className='table-player player-single'>
+                  <table className='table table-hover'>
                     <thead>
                       <tr>    
                         <th>Season</th>
@@ -87,7 +86,6 @@ function PlayerDetails() {
                         ))}
                     </tbody>
                   </table>
-                </div>
               </div>
               </div>
     </div>

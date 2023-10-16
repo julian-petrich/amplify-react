@@ -15,7 +15,7 @@ function NavBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto navbar-container">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/player">Player</Nav.Link>
+          <Nav.Link href="/players">Player</Nav.Link>
           <Nav.Link href="/results">Results</Nav.Link>
           <Nav.Link href="/ladder">Ladder</Nav.Link>
         </Nav>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import "../../App.css";
+import "./Player.css"
 import NavBar from '../navbar/NavBar'; 
 
 function PlayerList() {
@@ -21,31 +22,34 @@ function PlayerList() {
         }
     }
 
+    if (isLoading) {
+      return <div>Loading...</div>;
+      }
+
   
     function renderTable(position) {
       const filteredData = players.filter((player) => player.position === position);
       
       return (  
-        <div key={position}>
+        <div>
           <h5>{position}</h5>
-          <div className="table-responsive table-player">
+          <div className="table-player">
           <table className="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Games</th>
-                    <th scope="col">Goals</th>
-                    <th scope="col">Assists</th>
-                    <th scope="col">Clean Sheets</th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Games</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Clean Sheets</th>
                 </tr>
             </thead>
             <tbody>
             {filteredData.map((item, index) => (
               <tr key={index}>
-                <td>{item.id}</td>
                 <td>{item.number}</td>
-                <td><a href={`/player/${item["id"]}`} style={{ textDecoration: 'none'}}></a></td>
+                <td><a href={`/player/${item["id"]}`} style={{ textDecoration: 'none'}}>klasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsdklasjdakjsd</a></td>
                 <td>{item.games}</td>
                 <td>{item.goals}</td>
                 <td>{item.assists}</td>
@@ -55,7 +59,7 @@ function PlayerList() {
             </tbody>
             </table>
             </div>
-          </div>
+            </div>
       );
     }
   
@@ -67,7 +71,7 @@ function PlayerList() {
           <div>Loading...</div>
         ) : (
           players && (
-       <div className='table-container'>
+       <div className='container'>
                 {renderTable('Goalkeeper')}
                 {renderTable('Defender')}
                 {renderTable('Midfielder')}
