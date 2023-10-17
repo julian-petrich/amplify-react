@@ -46,7 +46,7 @@ function PlayerDetails() {
               <h5>{player["General"]["Firstname"]} {player["General"]["Lastname"]} (#{player["General"]["Number"]})</h5>
               <div className='container-player-general'>
               <div className="column">
-                  <img src="https://pxicme1bvd.execute-api.us-east-2.amazonaws.com/dev/players/3" alt="Image" />
+                  <img src={player["General"]["ImageKey"]} alt="Image" />
                 </div>
               <div className="column">
                 <p>Position: {player["General"]["Position"]}</p>

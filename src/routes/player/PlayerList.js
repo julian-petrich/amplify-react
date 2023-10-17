@@ -24,7 +24,7 @@ function PlayerList() {
 
   
     function renderTable(position) {
-      const filteredData = players.filter((player) => player.general.Position.S === position);
+      const filteredData = players.filter((player) => player.General.Position.S === position);
       
       return (  
         <div>
@@ -44,12 +44,12 @@ function PlayerList() {
             <tbody>
             {filteredData.map((item, index) => (
               <tr key={index}>
-                <td>{item.id}</td>
-                <td><a href={`/players/${item["id"]}`} style={{ textDecoration: 'none'}}>{`${item.general.Firstname.S} ${item.general.Lastname.S}`}</a></td>
-                <td>{item.season['2023'].M.Games.N}</td>
-                <td>{item.season['2023'].M.Goals.N}</td>
-                <td>{item.season['2023'].M.Assists.N}</td>
-                <td>{item.season['2023'].M["Clean Sheets"].N}</td>
+                <td>{item.ID}</td>
+                <td><a href={`/players/${item["ID"]}`} style={{ textDecoration: 'none'}}>{`${item.General.Firstname.S} ${item.General.Lastname.S}`}</a></td>
+                <td>{item.Season['2023'].M.Games.N}</td>
+                <td>{item.Season['2023'].M.Goals.N}</td>
+                <td>{item.Season['2023'].M.Assists.N}</td>
+                <td>{item.Season['2023'].M["Clean Sheets"].N}</td>
               </tr>
             ))}
             </tbody>
