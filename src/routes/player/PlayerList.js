@@ -44,7 +44,7 @@ function PlayerList() {
             <tbody>
             {filteredData.map((item, index) => (
               <tr key={index}>
-                <td>{item.ID}</td>
+                <td>{item.General.Number.N}</td>
                 <td><a href={`/players/${item["ID"]}`} style={{ textDecoration: 'none'}}>{`${item.General.Firstname.S} ${item.General.Lastname.S}`}</a></td>
                 <td>{item.Season['2023'].M.Games.N}</td>
                 <td>{item.Season['2023'].M.Goals.N}</td>

@@ -37,7 +37,7 @@ function SingleResult() {
             <div className='container'>
             <div className='result'>
               <h1>
-              <a href="#">{result["Home Team"].name}</a> {result["Home Team"].Goals} : {result["Away Team"].Goals} <a href="#"> {result["Away Team"].name}</a>
+              <a href="#" style={{ textDecoration: 'none'}}>{result["Home Team"].name}</a> {result["Home Team"].Goals} : {result["Away Team"].Goals} <a href="#" style={{ textDecoration: 'none'}}> {result["Away Team"].name}</a>
               </h1>
               <hr className="divider" />
               <ResultDetails result={result}/>
