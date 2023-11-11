@@ -19,8 +19,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_REGISTRY }}/your-image-name .
-        docker push ${{ secrets.DOCKER_REGISTRY }}/your-image-name
+        docker build -t ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend .
+        docker push ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
 
     - name: SSH into EC2 instance and pull the latest image
       uses: appleboy/ssh-action@master
@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_REGISTRY }}/your-image-name
+          docker pull ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
           docker stop your-container-name || true
           docker rm your-container-name || true
-          docker run -d --name your-container-name -p 80:80 ${{ secrets.DOCKER_REGISTRY }}/your-image-name
+          docker run -d --name your-container-name -p 80:80 ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
