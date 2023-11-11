@@ -13,22 +13,40 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Login to Docker registry
-      run: echo ${{ secrets.DOCKER_REGISTRY_PASSWORD }} | docker login -u ${{ secrets.DOCKER_REGISTRY_USER }} --password-stdin ${{ secrets.DOCKER_REGISTRY }}
-
-    - name: Build and push Docker image
-      run: |
-        docker build -t ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend .
-        docker push ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
-
-    - name: SSH into EC2 instance and pull the latest image
-      uses: appleboy/ssh-action@master
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-        script: |
-          docker pull ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
-          docker stop your-container-name || true
-          docker rm your-container-name || true
-          docker run -d --name your-container-name -p 80:80 ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+    
+    - name: Build, tag and push Docker image
+      id: build-image
+      env:
+        ECR_REGISTRY: $ {{ steps.logins-ecr.outputs.registry }}
+        ECR_REPOSITORY: mosman-reactjs-frontend
+        IMAGE_TAG: latest
+      run: | 
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+    # - name: Build and push Docker image
+    #   run: |
+    #     docker build -t ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend .
+    #     docker push ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
+
+    # - name: SSH into EC2 instance and pull the latest image
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: ${{ secrets.EC2_HOST }}
+    #     username: ${{ secrets.EC2_USER }}
+    #     key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+    #     script: |
+    #       docker pull ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
+    #       docker stop your-container-name || true
+    #       docker rm your-container-name || true
+    #       docker run -d --name your-container-name -p 80:80 ${{ secrets.DOCKER_REGISTRY }}/mosman-reactjs-frontend
