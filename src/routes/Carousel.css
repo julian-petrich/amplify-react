@@ -30,12 +30,23 @@ h1 {
 
 .image-caption-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
 }
+
+.carousel-caption-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: black;
+  }
